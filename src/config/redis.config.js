@@ -1,23 +1,23 @@
 import { createClient } from "redis";
 import ConfigDet from "./env.config.js";
 
-export const redisClient=createClient({
-    url:ConfigDet.RedisUrl,
+export const redisClient = createClient({
+    url: ConfigDet.RedisUrl,
     socket: {
-        tls: true
+        tls: ConfigDet.RedisUrl?.startsWith('rediss://')
     }
-})
+});
 
-redisClient.on('error',(err)=>{
+redisClient.on('error', (err) => {
     console.log(err)
 })
 
-const connectRedis=async ()=>{
-    try{
+const connectRedis = async () => {
+    try {
         await redisClient.connect();
-        console.log("Connected Redis Sucessfully");
+        console.log("Connected Redis Successfully");
     }
-    catch(e){
+    catch (e) {
         console.log(e.message);
     }
 }
