@@ -3,7 +3,11 @@ import ConfigDet from "./env.config.js";
 
 const db = async () => {
     try {
-        await mongoose.connect(ConfigDet.MongoUrl);
+        await mongoose.connect(ConfigDet.MongoUrl, {
+            serverSelectionTimeoutMS: 5000,
+            directConnection: true
+        });
+
         console.log("Mongo Db Connected Successfully");
     }
     catch (e) {
