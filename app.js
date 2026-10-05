@@ -6,5 +6,5 @@ const app=express();
 db()
 connectRedis()
 app.use(express.json())
-app.use('/api/auth',messageRouter)
+app.use('https://distributed-notification-system-mvxymqu4n.vercel.app/api/auth',messageRouter)
 export default app
