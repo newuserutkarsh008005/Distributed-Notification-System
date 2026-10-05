@@ -8,7 +8,7 @@ const db=async()=>{
         console.log("Mongo Db Connected Sucessfully")
     }
     catch(e){
-        console.log(e.message);
+        console.log("Mongo error to connect",e.message);
     }
 }
 export default db;
