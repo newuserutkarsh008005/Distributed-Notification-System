@@ -2,7 +2,7 @@ import { redisClient } from "../config/redis.config.js";
 
 export async function createMessage(data) {
     try{
-        redisClient.rPush(
+        await redisClient.rPush(
             'messageQueue',
             JSON.stringify(data)
         );

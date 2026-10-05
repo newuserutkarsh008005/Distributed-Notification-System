@@ -12,7 +12,7 @@ export async function health(req,res) {
 export async function sendMessage(req,res){
     const{name,to,message,subject}=req.body
     if(!name||!to||!message||!subject){
-        res.status(404).json({
+        return res.status(404).json({
             'message':'No Proper data given'
         })
     }
