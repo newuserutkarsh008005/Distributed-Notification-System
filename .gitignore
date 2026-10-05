@@ -1,5 +1,5 @@
 node_modules/
 .env
 .env.*
-!.env.examplenode_modules/
-.env
+!.env.example
+dump.rdb
