@@ -30,7 +30,7 @@ export async function sendMessage(req,res){
 
     await createMessage(data);
     
- axios.post('http://localhost:3000/api/auth/sendMessageMain',
+ axios.post('https://distributed-notification-system-chi.vercel.app/api/auth/sendMessageMain',
     {id}
  ).catch(err=>{
     console.log("Server B failed:", err.message);
