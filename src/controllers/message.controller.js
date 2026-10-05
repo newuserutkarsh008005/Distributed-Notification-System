@@ -30,7 +30,7 @@ export async function sendMessage(req,res){
     await createMessage(data);
 
     try {
-        await axios.post('https://serverworker-pink.vercel.app/api/auth/sendMessageMain', { id: data.id });
+         axios.post('https://serverworker-pink.vercel.app/api/auth/sendMessageMain', { id: data.id });
     } catch (err) {
         console.log("Server B failed:", err.response?.data || err.message);
     }
