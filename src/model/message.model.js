@@ -24,6 +24,10 @@ const messageSchema=new mongoose.Schema({
     status:{
         type:String,
         default:'Pending'
+    },
+    attempts:{
+        type:Number,
+        default:0
     }
 })
 const Message=mongoose.model("Message Detail",messageSchema);
